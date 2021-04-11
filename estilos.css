@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #545454;
+    display: flex;
+    font-family: sans-serif;
+    justify-content: center;
+}
+
+.container {
+    background-color: #14BDAC;
+    margin: 50px;
+    padding: 50px;
+    border-radius: 25px;/*poner borde redondito*/
+   /* width: 500px;
+    height: 500px;*/
+}
+.title {
+   text-align: center ;
+}
+.title span{
+    color: aliceblue;
+}
+
+.status-action{
+    display: flex;
+    margin-top: 25px;
+    font-size: 25px;
+    justify-content: space-around;
+}
+.reset{
+    cursor: pointer;
+}
+
+.reset:hover{
+    color: #F2EBD3;    
+}
+
+
+.game-grid{
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);/*atento es 1fr junto sino no funciona*/
+    grid-template-rows: repeat(3,1fr);/*atento es 1fr junto sino no funciona*/
+    grid-gap: 15px;
+}
+.game-cell{
+    cursor:pointer;
+    display: flex ;/*se hace para poder centrar los valores*/
+    justify-content: center;/*se centra de manera vertical las "x" u "o"*/
+    align-items: center;/*para centrarlo aun mas*/
+    height: 200px;
+    width: 200px;
+    background:red;
+}
+/*para poder poner las x o "o" en el michi  esto es porque se  creo clases con js*/
+/*se puede usar tanto after como before*/
+
+.x,
+.o {
+  cursor: default;
+}/*para informar al usuario de q esto no es clickeable despues de q aya un valor */
+
+.x::after{
+    content: 'x';
+    font-size: 200px;
+    
+}
+
+.o::after{
+    content: 'o';
+    font-size: 200px;
+    color: seashell;
+}
+
+.won::after{
+    color: blue;
+}
+
+@media only screen and (max-width: 1024px ){
+    .game-grid{
+        margin-top: 25px;
+        grid-gap: 10px;        
+    }
+    .game-cell{
+        height: 150px;
+        width: 150px;
+    }
+
+    .x::after{
+        font-size: 150px;        
+    }
+    .o::after{
+        font-size: 175px;
+    }
+}
+
+@media only screen and (max-width: 1024px ){
+    .container{
+        margin:25px;
+        padding:25px;
+    }
+    .game-cell{
+        height:100px ;
+        width: 100px;
+
+    }
+    .x::after{
+        font-size: 100px;        
+    }
+    .o::after{
+        font-size: 100px;
+    }
+}
