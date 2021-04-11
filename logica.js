@@ -29,6 +29,8 @@ const handleWin = (letter) => {
     }
   };
 
+  //creando el contenido de los cuadraditos
+
 
 const checkGameStatus = () => {
     const topLeft = cellDivs[0].classList[1];
